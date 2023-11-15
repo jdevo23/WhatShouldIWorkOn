@@ -1,0 +1,10 @@
+{
+	"tabWidth": 4,
+	"printWidth": 100,
+	"proseWrap": "always",
+	"requireConfig": false,
+	"useTabs": true,
+	"trailingComma": "es5",
+	"bracketSpacing": true,
+	"semi": true
+}
