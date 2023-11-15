@@ -4,13 +4,16 @@
 		"browser": true,
 		"es2021": true
 	},
-	"extends": ["airbnb-base", "airbnb-typescript/base", "prettier", "plugin:import/typescript"],
+	"extends": ["airbnb-base", "airbnb-typescript/base", "plugin:import/typescript", "prettier"],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": "latest",
 		"sourceType": "module",
 		"project": ["./tsconfig.json"]
 	},
-	"plugins": ["@typescript-eslint"],
-	"rules": {}
+	"plugins": ["@typescript-eslint", "prettier"],
+	"rules": {
+		"arrow-parens": ["error", "as-needed"],
+		"prettier/prettier": "error"
+	}
 }

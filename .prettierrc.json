@@ -6,5 +6,7 @@
 	"useTabs": true,
 	"trailingComma": "es5",
 	"bracketSpacing": true,
-	"semi": true
+	"semi": true,
+	"endOfLine": "crlf",
+	"arrowParens": "avoid"
 }
