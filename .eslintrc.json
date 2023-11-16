@@ -14,6 +14,8 @@
 	"plugins": ["@typescript-eslint", "prettier"],
 	"rules": {
 		"arrow-parens": ["error", "as-needed"],
-		"prettier/prettier": "error"
+		"prettier/prettier": "error",
+		"import/extensions": ["error", "never"]
 	}
 }
+
