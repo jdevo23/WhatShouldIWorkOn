@@ -5,7 +5,9 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "npx tsc -w"
+		"css_watch": "npx tailwindcss -i ./input.css -o ./dist/output.css --watch",
+		"ts_watch": "npx tsc -w",
+		"dev": "npm run css_watch & npm run ts_watch"
 	},
 	"repository": {
 		"type": "git",
@@ -31,3 +33,4 @@
 		"typescript": "^5.2.2"
 	}
 }
+
