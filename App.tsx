@@ -58,9 +58,9 @@ const ideas: IdeasArray = [
 ];
 
 const App: FunctionalComponent = () => (
-	<section>
+	<section class="w-full">
 		<header>
-			<h1 class="mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+			<h1 class="mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
 				What Should I Work On?
 			</h1>
 		</header>
@@ -70,8 +70,8 @@ const App: FunctionalComponent = () => (
 			<SubHeader>Projects</SubHeader>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-				{projects.map(({ title, description, progress }) => (
-					<Card title={title} description={description} progress={progress} />
+				{projects.map(({ id, title, description, progress }) => (
+					<Card id={id} title={title} description={description} progress={progress} />
 				))}
 			</div>
 		</section>
@@ -81,8 +81,8 @@ const App: FunctionalComponent = () => (
 			<SubHeader>Ideas</SubHeader>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-				{ideas.map(({ title, description }) => (
-					<Card title={title} description={description} />
+				{ideas.map(({ id, title, description }) => (
+					<Card id={id} title={title} description={description} />
 				))}
 			</div>
 		</section>
