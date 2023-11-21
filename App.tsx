@@ -1,5 +1,7 @@
 import { h, FunctionalComponent } from "preact";
+import Router from "preact-router";
 import { Card, SubHeader } from "./components/index";
+import { Project as ProjectPage } from "./pages/index";
 import "./input.css";
 
 interface Project {
@@ -58,35 +60,39 @@ const ideas: IdeasArray = [
 ];
 
 const App: FunctionalComponent = () => (
-	<section class="w-full">
-		<header>
-			<h1 class="mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
-				What Should I Work On?
-			</h1>
-		</header>
+	<Router>
+		<section class="w-full" path="/">
+			<header>
+				<h1 class="mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">
+					What Should I Work On?
+				</h1>
+			</header>
 
-		{/* PROJECTS */}
-		<section class="my-10">
-			<SubHeader>Projects</SubHeader>
+			{/* PROJECTS */}
+			<section class="my-10">
+				<SubHeader>Projects</SubHeader>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-				{projects.map(({ id, title, description, progress }) => (
-					<Card id={id} title={title} description={description} progress={progress} />
-				))}
-			</div>
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+					{projects.map(({ id, title, description, progress }) => (
+						<Card id={id} title={title} description={description} progress={progress} />
+					))}
+				</div>
+			</section>
+
+			{/* IDEAS */}
+			<section class="my-10">
+				<SubHeader>Ideas</SubHeader>
+
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+					{ideas.map(({ id, title, description }) => (
+						<Card id={id} title={title} description={description} />
+					))}
+				</div>
+			</section>
 		</section>
 
-		{/* IDEAS */}
-		<section class="my-10">
-			<SubHeader>Ideas</SubHeader>
-
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-				{ideas.map(({ id, title, description }) => (
-					<Card id={id} title={title} description={description} />
-				))}
-			</div>
-		</section>
-	</section>
+		<ProjectPage path="/project/:id" />
+	</Router>
 );
 
 export default App;
